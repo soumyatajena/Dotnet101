@@ -28,7 +28,7 @@ namespace LeetCodeProgram
             Solution.MoveZeroes(nums);
             int target = 5;
             Console.WriteLine($"The two indices sum which == the target - {target} is below:");
-            int[] twoSum = Solution.TwoSum(nums,target);
+            int[] twoSum = Solution.TwoSum(nums, target);
             for (int i = 0; i < twoSum.Length; i++)
             {
                 Console.Write(twoSum[i]);
@@ -127,7 +127,7 @@ namespace LeetCodeProgram
         public static void MoveZeroes(int[] nums)
         {
             List<int> list = new();
-            list = nums.ToList().FindAll(a=>a != 0);
+            list = nums.ToList().FindAll(a => a != 0);
             int zeroCount = nums.Length - list.Count;
             for (int i = 0; i < zeroCount; i++)
             {
