@@ -6,41 +6,9 @@ using System.Threading.Tasks;
 
 namespace LeetCodeProgram
 {
-    public class LeetCode_Array
+    public class LeetCodeEasy
     {
-        public static void Main(string[] args)
-        {
-
-            int[] nums = [2, 7, 11, 15];
-            int k = 2;
-            Solution.Rotate(nums, k);
-            Solution.RemoveDuplicates(nums);
-
-            bool res = Solution.ContainsDuplicate(nums) ? true : false;
-            Console.WriteLine("Contains Duplicates : " + res);
-
-            int[] newArr = Solution.PlusOne(nums);
-            Console.WriteLine("Plus One with given number:");
-            for (int i = 0; i < newArr.Length; i++)
-            {
-                Console.Write(newArr[i]);
-            }
-            Solution.MoveZeroes(nums);
-            int target = 5;
-            Console.WriteLine($"The two indices sum which == the target - {target} is below:");
-            int[] twoSum = Solution.TwoSum(nums, target);
-            for (int i = 0; i < twoSum.Length; i++)
-            {
-                Console.Write(twoSum[i]);
-            }
-            int[][] matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
-            Solution.RotateMatrix(matrix);
-
-        }
-    }
-    public class Solution
-    {
-        public static int RemoveDuplicates(int[] nums)
+        public int RemoveDuplicates(int[] nums)
         {
             int[] tempArr = nums;
             int k = 1;
@@ -57,7 +25,7 @@ namespace LeetCodeProgram
             }
             return k;
         }
-        public static void Rotate(int[] nums, int k)
+        public void Rotate(int[] nums, int k)
         {
             int[] tempArr = nums.ToArray();
             int len = nums.Length;
@@ -86,7 +54,7 @@ namespace LeetCodeProgram
             }
             GC.Collect(GC.MaxGeneration, GCCollectionMode.Aggressive);
         }
-        public static bool ContainsDuplicate(int[] nums)
+        public bool ContainsDuplicate(int[] nums)
         {
             int[] uniqueArr = nums.ToArray();
             uniqueArr = nums.Distinct().ToArray();
@@ -111,7 +79,7 @@ namespace LeetCodeProgram
 
             //return ans;
         }
-        public static int[] PlusOne(int[] digits)
+        public int[] PlusOne(int[] digits)
         {
             long plusOne = Convert.ToInt64(string.Join("", digits)) + 1;
             List<int> newArr = new();
@@ -124,7 +92,7 @@ namespace LeetCodeProgram
             newArr.Reverse();
             return newArr.ToArray();
         }
-        public static void MoveZeroes(int[] nums)
+        public void MoveZeroes(int[] nums)
         {
             List<int> list = new();
             list = nums.ToList().FindAll(a => a != 0);
@@ -140,7 +108,7 @@ namespace LeetCodeProgram
 
             }
         }
-        public static int[] TwoSum(int[] nums, int target)
+        public int[] TwoSum(int[] nums, int target)
         {
             Dictionary<int, int> dict = [];
             for (int i = 0; i < nums.Length; i++)
@@ -152,7 +120,7 @@ namespace LeetCodeProgram
             }
             return [];
         }
-        public static void RotateMatrix(int[][] matrix)
+        public void RotateMatrix(int[][] matrix)
         {
             // Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
             // Output: [[7,4,1],[8,5,2],[9,6,3]] 
