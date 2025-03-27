@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EasyInterviewProblems\EasyInterviewProblems.csproj" />
+    <ProjectReference Include="..\LeetCodeProgram\LeetCodeProgram.csproj" />
+    <ProjectReference Include="..\SortingAlgorithms\SortingAlgorithms.csproj" />
+  </ItemGroup>
+
 </Project>
