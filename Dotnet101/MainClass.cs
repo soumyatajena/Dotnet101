@@ -176,10 +176,10 @@ namespace Dotnet101
                                 switch (case3NumInner)
                                 {
                                     case 1:
-                                        BasicSortingAlgo.SelectionSortFunc(arr);
+                                        BasicSortingAlgo.SelectionSort(arr);
                                         break;
                                     case 2:
-                                        BasicSortingAlgo.BubbleSort(arr);
+                                        BasicSortingAlgo.InsertionSort(arr);
                                         break;
                                     case 3:
                                         break;
