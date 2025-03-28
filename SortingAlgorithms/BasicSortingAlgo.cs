@@ -8,24 +8,27 @@ namespace SortingAlgorithms
 {
     public class BasicSortingAlgo
     {
-        #region Selection Sort
-        public static void SelectionSort(int[] arr)
-        {
-            /***
+        /***
              * STABLE SORTING ALGO - PRESERVE THE RELATIVE POSITIONS AS INSERTED IN ARRAY
              * [AA,CC,BZ,DD,BM] = > [AA,BZ,BM,CC,DD]
-             * UNSTABLE SORTING ALGO - POSITIONS WILL BE REPLACED - (EG. SELECTION SORT)
+             * UNSTABLE SORTING ALGO - POSITIONS WILL BE REPLACED
              * [AA,CC,BZ,DD,BM] = > [AA,BM,BZ,CC,DD]
              */
 
+        #region Selection Sort
+        // UNSTABLE SORTING ALGO
+        public static void SelectionSort(int[] arr)
+        {
             for (int i=0;i<arr.Length-1;i++)
             {
                 int min = i;
-                for (int j=+1;j<arr.Length;j++)
-                {                    
+                for (int j=i+1;j<arr.Length;j++)
+                {        
+                    // find the smallest ele in array , switch its position at arr[0] and so on
                     if (arr[j] < arr[min])
                         min = j;
                 }
+                // Swap ele to correct positions
                 int temp = arr[i];
                 arr[i] = arr[min];
                 arr[min] = temp;
@@ -40,6 +43,7 @@ namespace SortingAlgorithms
         }
         #endregion
         #region Insertion Sort
+        // STABLE SORTING ALGO
         public static void InsertionSort(int[] arr)
         {
             for (int i = 1; i < arr.Length; i++)
