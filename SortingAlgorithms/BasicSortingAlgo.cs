@@ -19,11 +19,11 @@ namespace SortingAlgorithms
         // UNSTABLE SORTING ALGO
         public static void SelectionSort(int[] arr)
         {
-            for (int i=0;i<arr.Length-1;i++)
+            for (int i = 0; i < arr.Length - 1; i++)
             {
                 int min = i;
-                for (int j=i+1;j<arr.Length;j++)
-                {        
+                for (int j = i + 1; j < arr.Length; j++)
+                {
                     // find the smallest ele in array , switch its position at arr[0] and so on
                     if (arr[j] < arr[min])
                         min = j;
@@ -35,7 +35,7 @@ namespace SortingAlgorithms
             }
 
             Console.WriteLine("Sorted Array using Selection Sort: ");
-            for(int i =0;i<arr.Length;i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 Console.Write(arr[i] + " ");
             }
@@ -50,7 +50,7 @@ namespace SortingAlgorithms
             {
                 int key = arr[i]; // save the current ele
                 int j = i - 1; // last ele position of sorted array
-                while(j>=0 && arr[j]> key)
+                while (j >= 0 && arr[j] > key)
                 {
                     // shift elemets to right until you reach the current ele correct position
                     arr[j + 1] = arr[j];
@@ -58,6 +58,27 @@ namespace SortingAlgorithms
                 }
                 // store the current ele in its correct position
                 arr[j + 1] = key;
+            }
+
+            Console.WriteLine("Sorted Array using Insertion Sort: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            Console.WriteLine();
+        }
+        #endregion
+        #region Bubble Sort
+        public static void BubbleSort(int[] arr)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = 0; j < arr.Length - 1; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                        // swap (using tuple)
+                        (arr[j], arr[j+1]) = (arr[j+1], arr[j]);
+                }
             }
 
             Console.WriteLine("Sorted Array using Insertion Sort: ");

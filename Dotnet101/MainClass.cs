@@ -182,6 +182,7 @@ namespace Dotnet101
                                         BasicSortingAlgo.InsertionSort(arr);
                                         break;
                                     case 3:
+                                        BasicSortingAlgo.BubbleSort(arr);
                                         break;
                                     case 4:
                                         break;
