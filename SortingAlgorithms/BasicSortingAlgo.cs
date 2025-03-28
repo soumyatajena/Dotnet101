@@ -69,6 +69,7 @@ namespace SortingAlgorithms
         }
         #endregion
         #region Bubble Sort
+        // STABLE SORTING ALGO
         public static void BubbleSort(int[] arr)
         {
             for (int i = 0; i < arr.Length - 1; i++)
