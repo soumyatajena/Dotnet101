@@ -155,7 +155,7 @@ namespace Dotnet101
                             int[] arr = new int[10];
                             for (int i = 0; i < arr.Length; i++)
                                 arr[i] = random.Next(1, 100);
-                            Console.WriteLine("Unsorted Array : ");
+                            Console.WriteLine("\n Unsorted Array : ");
                             for (int i = 0; i < arr.Length; i++)
                             {
                                 Console.Write(arr[i] + " ");
@@ -184,9 +184,16 @@ namespace Dotnet101
                                     case 3:
                                         BasicSortingAlgo.BubbleSort(arr);
                                         break;
-                                    case 4:
+                                    case 4:                                        
                                         break;
                                     case 5:
+                                        int[] sArr = BasicSortingAlgo.QuickSort(arr, 0, arr.Length - 1);
+                                        Console.WriteLine("Sorted Array using Quick Sort: ");
+                                        for (int i = 0; i < sArr.Length; i++)
+                                        {
+                                            Console.Write(sArr[i] + " ");
+                                        }
+                                        Console.WriteLine();
                                         break;
                                     case 6:
                                         break;
