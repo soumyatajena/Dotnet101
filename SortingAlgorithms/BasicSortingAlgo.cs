@@ -2,6 +2,7 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -105,6 +106,58 @@ namespace SortingAlgorithms
             ind++;
             (arr[end], arr[ind]) = (arr[ind], arr[end]);
             return ind;
+        }
+        #endregion
+        #region Merge Sort
+        // TC = O(nlogn), SC = O(n)
+        public static int[] MergeSort(int[] arr, int st, int end)
+        {
+            // Divide & Conquer
+            if(st<end)
+            {
+                int mid = st +(end-st) / 2;
+                MergeSort(arr, st, mid);// left
+                MergeSort(arr, mid+1, end);// right
+                // Merge
+                Merge(arr, st, mid, end);
+            }
+            return arr;
+        }
+
+        private static void Merge(int[] arr, int st, int mid, int end)
+        {
+            List<int> temp = new();
+            int i = st, j = mid + 1;
+            while(i<=mid && j<=end)
+            {
+                if (arr[i] <= arr[j])
+                {
+                    temp.Add(arr[i]);
+                    i++;
+                }
+                else
+                {
+                    temp.Add(arr[j]);
+                    j++;
+                }
+            }
+            // remaining ele from both sides , if any
+            while(i<=mid)
+            {
+                temp.Add(arr[i]);
+                i++;
+            }
+            while(j<=end)
+            {
+                temp.Add(arr[j]);
+                j++;
+            }
+            // replace temp values in the arr
+
+            for(int ind=0;ind<temp.Count;ind++)
+            {
+                arr[ind + st] = temp[ind];
+            }
         }
         #endregion
         private static void DisplaySortedArray(int[] arr, string sortType)

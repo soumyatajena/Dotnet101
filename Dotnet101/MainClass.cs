@@ -184,14 +184,21 @@ namespace Dotnet101
                                     case 3:
                                         BasicSortingAlgo.BubbleSort(arr);
                                         break;
-                                    case 4:                                        
-                                        break;
-                                    case 5:
-                                        int[] sArr = BasicSortingAlgo.QuickSort(arr, 0, arr.Length - 1);
-                                        Console.WriteLine("Sorted Array using Quick Sort: ");
+                                    case 4:
+                                        int[] sArr = BasicSortingAlgo.MergeSort(arr, 0, arr.Length - 1);
+                                        Console.WriteLine("Sorted Array using Merge Sort: ");
                                         for (int i = 0; i < sArr.Length; i++)
                                         {
                                             Console.Write(sArr[i] + " ");
+                                        }
+                                        Console.WriteLine();
+                                        break;
+                                    case 5:
+                                        int[] sArr1 = BasicSortingAlgo.QuickSort(arr, 0, arr.Length - 1);
+                                        Console.WriteLine("Sorted Array using Quick Sort: ");
+                                        for (int i = 0; i < sArr1.Length; i++)
+                                        {
+                                            Console.Write(sArr1[i] + " ");
                                         }
                                         Console.WriteLine();
                                         break;
